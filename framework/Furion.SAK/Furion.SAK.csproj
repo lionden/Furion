@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <Description>让 .NET 开发更简单，更通用，更流行。</Description>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\Furion\App\Extensions\ObjectExtensions.cs" Link="App\Extensions\ObjectExtensions.cs" />
+		<Compile Include="..\Furion\ClayObject\Clay.cs" Link="ClayObject\Clay.cs" />
+		<Compile Include="..\Furion\ClayObject\ClayArrayEnumerator.cs" Link="ClayObject\ClayArrayEnumerator.cs" />
+		<Compile Include="..\Furion\ClayObject\ClayObjectEnumerator.cs" Link="ClayObject\ClayObjectEnumerator.cs" />
+		<Compile Include="..\Furion\ClayObject\Extensions\DictionaryExtensions.cs" Link="ClayObject\Extensions\DictionaryExtensions.cs" />
+		<Compile Include="..\Furion\ClayObject\Extensions\ExpandoObjectExtensions.cs" Link="ClayObject\Extensions\ExpandoObjectExtensions.cs" />
+		<Compile Include="..\Furion\DependencyInjection\Attributes\SuppressSnifferAttribute.cs" Link="DependencyInjection\Attributes\SuppressSnifferAttribute.cs" />
+		<Compile Include="..\Furion\JsonSerialization\Providers\IJsonSerializerProvider.cs" Link="JsonSerialization\Providers\IJsonSerializerProvider.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="ClayObject\Extensions\" />
+		<Folder Include="App\Extensions\" />
+		<Folder Include="App\" />
+		<Folder Include="DependencyInjection\Attributes\" />
+		<Folder Include="JsonSerialization\Providers\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+</Project>

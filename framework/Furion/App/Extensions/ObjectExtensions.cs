@@ -23,7 +23,6 @@
 // 请访问 https://gitee.com/dotnetchina/Furion 获取更多关于 Furion 项目的许可证和版权信息。
 // ------------------------------------------------------------------------
 
-using Microsoft.AspNetCore.Http;
 using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Reflection;
@@ -37,7 +36,7 @@ namespace Furion.Extensions;
 /// 对象拓展类
 /// </summary>
 [SuppressSniffer]
-public static class ObjectExtensions
+public static partial class ObjectExtensions
 {
     /// <summary>
     /// 将 DateTimeOffset 转换成本地 DateTime
@@ -102,22 +101,6 @@ public static class ObjectExtensions
         return (digitCount == 13
             ? timeStampDateTime.AddMilliseconds(timestamp)  // 13 位时间戳
             : timeStampDateTime.AddSeconds(timestamp)).ToLocalTime();   // 10 位时间戳
-    }
-
-    /// <summary>
-    /// 将 IFormFile 转换成 byte[]
-    /// </summary>
-    /// <param name="formFile"></param>
-    /// <returns></returns>
-    public static byte[] ToByteArray(this IFormFile formFile)
-    {
-        var fileLength = formFile.Length;
-        using var stream = formFile.OpenReadStream();
-        var bytes = new byte[fileLength];
-
-        stream.Read(bytes, 0, (int)fileLength);
-
-        return bytes;
     }
 
     /// <summary>
